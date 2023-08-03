@@ -1,13 +1,17 @@
-import { Box, Button, Typography } from "@mui/material";
-import React, { Fragment, forwardRef, useState } from "react";
+import { Alert, Box, Button, Typography } from "@mui/material";
+import React, { Fragment, useState } from "react";
 // import { ThemeProvider, createTheme } from "@mui/material/styles";
 // import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import { Link, useNavigate } from "react-router-dom";
 import Image from "../images/isai-ramos-_3SFFsWqCVg-unsplash.jpg";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
 // import {saveAs} from 'file-saver'
+import Snackbar from "@mui/material/Snackbar";
+import "../styles/Login.css";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 const Login = () => {
   const [data, setData] = useState({});
@@ -16,17 +20,11 @@ const Login = () => {
   //     mode: "dark",
   //   }
   // });
-  const Alert = forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-  });
+  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
   const [openSnackbar, setOpenSnackbar] = useState(false);
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      setOpenSnackbar(false);
-    }
-  };
-
   const handleChange = (e) => {
     setData((prevData) => {
       prevData[e.target.name] = e.target.value;
@@ -50,30 +48,27 @@ const Login = () => {
 
   const handleClick = () => {
     debugger;
-    setOpenSnackbar(true);
     if (getName === data.Username && getPassword === data.password) {
-      navigate("/home"); // We can also use navigate with callback functions but we don't have to use Link with callback functions
-    } else {
-      <Snackbar
-        anchorOrigin={{ horizontal: "left", vertical: "top" }}
-        open={openSnackbar}
-        autoHideDuration={200}
-        onClose={handleClose}
-      >
-        <Alert onClose={handleClose} severity="error" SX={{ width: "100%" }}>
-          Invalid User!!!!
-        </Alert>
-      </Snackbar>;
+      setOpenSnackbar(true);
+      setTimeout(() => {
+        navigate("/home"); // We can also use navigate with callback functions but we don't have to use Link with callback functions
+      }, 600);
     }
   };
   const handleRegister = () => {
     setTimeout(() => {
       navigate("/register", { replace: true });
-    }, 200);
+    }, 5000);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenSnackbar(false);
   };
   return (
     <Fragment>
-      {/* <ThemeProvider theme={darkTheme}> */}
       <Box
         sx={{
           backgroundImage: `url(${Image})`,
@@ -113,6 +108,7 @@ const Login = () => {
           }}
         >
           <TextField
+            autoFocus="true"
             label="Username"
             variant="standard"
             name="Username"
@@ -128,9 +124,16 @@ const Login = () => {
             variant="standard"
             name="password"
             value={data.name}
-            type="password"
+            type={showPassword ? "text" : "password"}
             onChange={handleChange}
             sx={{ justifyContent: "center", ml: 10 }}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton onClick={handleClickShowPassword} edge="end">
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
           ></TextField>
           <Button
             variant="contained"
@@ -139,6 +142,21 @@ const Login = () => {
           >
             Sign in
           </Button>
+          <Snackbar
+            className="snack"
+            open={openSnackbar}
+            autoHideDuration={3000}
+            onClose={handleClose}
+            // sx={{backgroundColor:'green'}}
+          >
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%", backgroundColor: "green", color: "white" }}
+            >
+              Logged In!!
+            </Alert>
+          </Snackbar>
           <Button
             variant="contained"
             sx={{ mr: 5, mt: -7.1, ml: 24.5 }}
@@ -146,11 +164,10 @@ const Login = () => {
           >
             Register
           </Button>
-          <Typography sx={{ml:9, color:'white', mt:1}}>
+          <Typography sx={{ ml: 9, color: "white", mt: 1 }}>
             New User? <Link to={"/register"}>Register</Link> yourself first !!
           </Typography>
         </Box>
-        {/* </ThemeProvider> */}
       </Box>
     </Fragment>
   );
