@@ -1,0 +1,15 @@
+.form{
+ color: black;
+ font-weight: bold;
+ margin-top: 4px;
+ font-weight: 400px;
+}
+.box .field{
+    width: 700px;
+}
+.btn{
+    margin-top: 50px;
+}
+.form-control{
+    background-color: #bcc7cc;
+}

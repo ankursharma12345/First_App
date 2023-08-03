@@ -1,0 +1,13 @@
+.box{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box .p1{
+    color: black;
+}
+.box .p2{
+    color: black;
+}
