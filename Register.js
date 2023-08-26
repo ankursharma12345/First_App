@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  InputLabel,
   MenuItem,
   Select,
   TextField,
@@ -23,6 +24,8 @@ const Register = ()=>{
   // For storing the data in localstorage when data changes
   useEffect(() => {
     localStorage.setItem("Data", JSON.stringify(data));
+    let login = {"userId":data?.Name, "password":data?.password}
+    localStorage.setItem("credentials",JSON.stringify(login))
   }, [data]);
 
   // const getData = JSON.parse(localStorage.getItem("Data")); // it return data in the form of object
@@ -129,13 +132,14 @@ const Register = ()=>{
               helperText={errors.EmailId}
               sx={{ ml: "15%", mt: 7 }}
             ></TextField>
+              <InputLabel sx={{ml:62, mt: -10}}>Age</InputLabel>
             <Select
-              sx={{ ml: "19%", mt: 7, width: "215px" }}
+              sx={{ ml: "62%", mt: 0, width: "215px" }}
               name="Age"
               label="Age"
               value={data.name}
               onChange={handleChange}
-            >
+              >
               <MenuItem value={10}>Ten</MenuItem>
               <MenuItem value={20}>Twenty</MenuItem>
               <MenuItem value={30}>Thirty</MenuItem>
