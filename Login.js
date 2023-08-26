@@ -4,7 +4,7 @@ import React, { Fragment, useState } from "react";
 // import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import { Link, useNavigate } from "react-router-dom";
-import Image from "../images/isai-ramos-_3SFFsWqCVg-unsplash.jpg";
+import Image from "../images/thomas-heintz-0tgMnMIYQ9Y-unsplash.jpg";
 // import {saveAs} from 'file-saver'
 import Snackbar from "@mui/material/Snackbar";
 import "../styles/Login.css";
@@ -38,27 +38,26 @@ const Login = () => {
 
   // const getDataItem = {...getData}
 
-  const getName = getData.Name;
+  const getName = getData?.Name;
   // console.log(getName);
 
-  const getPassword = getData.password;
+  const getPassword = getData?.password;
   // console.log(getPassword);
 
   const navigate = useNavigate();
 
   const handleClick = () => {
-    debugger;
     if (getName === data.Username && getPassword === data.password) {
       setOpenSnackbar(true);
       setTimeout(() => {
         navigate("/home"); // We can also use navigate with callback functions but we don't have to use Link with callback functions
-      }, 600);
+      }, 400);
     }
   };
   const handleRegister = () => {
     setTimeout(() => {
       navigate("/register", { replace: true });
-    }, 5000);
+    }, 400);
   };
 
   const handleClose = (event, reason) => {
@@ -69,6 +68,7 @@ const Login = () => {
   };
   return (
     <Fragment>
+      {/* <ThemeProvider theme={darkTheme}> */}
       <Box
         sx={{
           backgroundImage: `url(${Image})`,
@@ -112,6 +112,7 @@ const Login = () => {
             label="Username"
             variant="standard"
             name="Username"
+            color="success"
             value={data.name}
             autoComplete="off" // It will not shown any hint
             onChange={handleChange}
@@ -168,6 +169,7 @@ const Login = () => {
             New User? <Link to={"/register"}>Register</Link> yourself first !!
           </Typography>
         </Box>
+        {/* </ThemeProvider> */}
       </Box>
     </Fragment>
   );
