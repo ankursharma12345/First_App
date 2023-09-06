@@ -1,0 +1,22 @@
+.home {
+    height: 90vh; /* This helps for maintaining the height of the size, the more the vh the more the image will cover at the background*/
+    display: flex;    
+    justify-content: center;  /* For centering the content in the home page*/
+    align-items: left;
+    flex-direction: column;  /* For align the content at the left*/
+    background-position: center;  /* To center the image at the background*/
+    background-repeat: no-repeat;  /* For no-repeat the image at the background*/
+    background-size: cover;       /* For covering the whole page at the background*/
+  }
+.home .headercontainer h1{
+    justify-content: center;
+    font-weight: bold;
+    align-items: center;
+    font-size: 70px;
+}
+.home .headerContainer p {
+  margin-top: 1px;
+  font-size: 40px;
+  font-weight: lighter;
+  color: black;
+}
