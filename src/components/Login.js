@@ -1,4 +1,4 @@
-import { Alert, Box, Button, Typography } from "@mui/material";
+import { Alert, Box, Button, Grid, Typography } from "@mui/material";
 import React, { Fragment, useState } from "react";
 // import { ThemeProvider, createTheme } from "@mui/material/styles";
 // import CssBaseline from "@mui/material/CssBaseline";
@@ -69,21 +69,35 @@ const Login = () => {
   return (
     <Fragment>
       {/* <ThemeProvider theme={darkTheme}> */}
-      <Box
+      <Grid
+        container
+        xs={12}
+        sm={12}
+        md={12}
+        height="100vh"
+        width="100vw"
         sx={{
           backgroundImage: `url(${Image})`,
-          height: "100vh",
-          backgroundPositionY: "fixed",
+          // height: "100vh",
+          // width: "auto",
+          // backgroundPositionY: "fixed",
         }}
       >
-        {" "}
         {/* For fixing the scroll we use backgroundPositionY: 'fixed' */}
         {/* <CssBaseline /> */}
-        <Typography
-          sx={{ color: "green", fontSize: 30, ml: "42.5%", fontWeight: "bold" }}
-        >
-          Login Here!!
-        </Typography>
+        <Grid item xs={12} md={12} sm={12} bgcolor="red">
+          <Typography
+            sx={{
+              color: "green",
+              fontSize: 30,
+              fontWeight: "bold",
+              textAlign: "center",
+              bgcolor: "yellow",
+            }}
+          >
+            Login Here!!
+          </Typography>
+        </Grid>
         {/* <Box sx={{ backgroundColor: "goldenrod", height: "5rem" }}>
           <Typography
             sx={{
@@ -96,81 +110,86 @@ const Login = () => {
             Login First!
           </Typography>
         </Box> */}
-        <Box
-          sx={{
-            width: 400,
-            height: 410,
-            backgroundColor: "grey",
-            justifyContent: "center",
-            marginLeft: "34%",
-            mt: "55px",
-            // mb: "40px",
-          }}
-        >
-          <TextField
-            autoFocus="true"
-            label="Username"
-            variant="standard"
-            name="Username"
-            color="success"
-            value={data.name}
-            autoComplete="off" // It will not shown any hint
-            onChange={handleChange}
-            sx={{ justifyContent: "center", ml: 10, mt: 9 }}
-          ></TextField>
-          <br />
-          <br />
-          <TextField
-            label="Password"
-            variant="standard"
-            name="password"
-            value={data.name}
-            type={showPassword ? "text" : "password"}
-            onChange={handleChange}
-            sx={{ justifyContent: "center", ml: 10 }}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton onClick={handleClickShowPassword} edge="end">
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-          ></TextField>
-          <Button
-            variant="contained"
-            sx={{ mt: 6, mr: 7, ml: 9.5 }}
-            onClick={handleClick}
+        {/* <Grid container sm={12} md={12} xs={}> */}
+        <Grid item xs={12} sm={12} md={12}>
+          <Box
+            sx={{
+              width: { md: 400, xs: 330 },
+              height: { md: 410, xs: 340 },
+              backgroundColor: "grey",
+              justifyContent: "center",
+              marginLeft: "auto",
+              marginRight: "auto",
+              mt: "10px",
+              // mb: "40px",
+            }}
           >
-            Sign in
-          </Button>
-          <Snackbar
-            className="snack"
-            open={openSnackbar}
-            autoHideDuration={3000}
-            onClose={handleClose}
-            // sx={{backgroundColor:'green'}}
-          >
-            <Alert
-              onClose={handleClose}
-              severity="success"
-              sx={{ width: "100%", backgroundColor: "green", color: "white" }}
+            <TextField
+              autoFocus="true"
+              label="Username"
+              variant="standard"
+              name="Username"
+              color="success"
+              value={data.name}
+              autoComplete="off" // It will not shown any hint
+              onChange={handleChange}
+              sx={{ justifyContent: "center", ml: 10, mt: 9 }}
+            ></TextField>
+            <br />
+            <br />
+            <TextField
+              label="Password"
+              variant="standard"
+              name="password"
+              value={data.name}
+              type={showPassword ? "text" : "password"}
+              onChange={handleChange}
+              sx={{ justifyContent: "center", ml: 10 }}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton onClick={handleClickShowPassword} edge="end">
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+            ></TextField>
+            <Button
+              variant="contained"
+              sx={{ mt: 6, mr: 7, ml: 9.5 }}
+              onClick={handleClick}
             >
-              Logged In!!
-            </Alert>
-          </Snackbar>
-          <Button
-            variant="contained"
-            sx={{ mr: 5, mt: -7.1, ml: 24.5 }}
-            onClick={handleRegister}
-          >
-            Register
-          </Button>
-          <Typography sx={{ ml: 9, color: "white", mt: 1 }}>
-            New User? <Link to={"/register"}>Register</Link> yourself first !!
-          </Typography>
-        </Box>
+              Sign in
+            </Button>
+            <Snackbar
+              className="snack"
+              open={openSnackbar}
+              autoHideDuration={3000}
+              onClose={handleClose}
+              // sx={{backgroundColor:'green'}}
+            >
+              <Alert
+                onClose={handleClose}
+                severity="success"
+                sx={{ width: "100%", backgroundColor: "green", color: "white" }}
+              >
+                Logged In!!
+              </Alert>
+            </Snackbar>
+            <Button
+              variant="contained"
+              sx={{ mr: 5, mt: -7.1, ml: 24.5 }}
+              onClick={handleRegister}
+            >
+              Register
+            </Button>
+            <Typography sx={{ ml: 9, color: "white", mt: 1 }}>
+              New User? <Link to={"/register"}>Register</Link> yourself first !!
+            </Typography>
+          </Box>
+        </Grid>
         {/* </ThemeProvider> */}
-      </Box>
+      </Grid>
+      {/* </Grid> */}
     </Fragment>
   );
 };
