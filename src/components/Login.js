@@ -1,27 +1,18 @@
 import { Alert, Box, Button, Grid, Typography } from "@mui/material";
 import React, { Fragment, useState } from "react";
-// import { ThemeProvider, createTheme } from "@mui/material/styles";
-// import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import { Link, useNavigate } from "react-router-dom";
 import Image from "../images/thomas-heintz-0tgMnMIYQ9Y-unsplash.jpg";
-// import {saveAs} from 'file-saver'
-import Snackbar from "@mui/material/Snackbar";
-import "../styles/Login.css";
-import IconButton from "@mui/material/IconButton";
-import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import IconButton from "@mui/material/IconButton";
+import InputAdornment from "@mui/material/InputAdornment";
+import Snackbar from "@mui/material/Snackbar";
+import "../styles/Login.css";
 
 const Login = () => {
   const [data, setData] = useState({});
-  // const darkTheme = createTheme({
-  //   palette: {
-  //     mode: "dark",
-  //   }
-  // });
   const [showPassword, setShowPassword] = useState(false);
-  // const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -33,16 +24,9 @@ const Login = () => {
   };
 
   const getData = JSON.parse(localStorage.getItem("Data"));
-  // const dataBlob = new Blob([JSON.stringify(getData)]);
-  // saveAs(dataBlob, 'server1.json');
-
-  // const getDataItem = {...getData}
-
   const getName = getData?.Name;
-  // console.log(getName);
 
   const getPassword = getData?.password;
-  // console.log(getPassword);
 
   const navigate = useNavigate();
 
@@ -78,9 +62,6 @@ const Login = () => {
         width="100vw"
         sx={{
           backgroundImage: `url(${Image})`,
-          // height: "100vh",
-          // width: "auto",
-          // backgroundPositionY: "fixed",
         }}
       >
         {/* For fixing the scroll we use backgroundPositionY: 'fixed' */}
@@ -98,19 +79,6 @@ const Login = () => {
             Login Here!!
           </Typography>
         </Grid>
-        {/* <Box sx={{ backgroundColor: "goldenrod", height: "5rem" }}>
-          <Typography
-            sx={{
-              color: "white",
-              ml: "570px",
-              fontSize: "30px",
-              mt: "30px",
-            }}
-          >
-            Login First!
-          </Typography>
-        </Box> */}
-        {/* <Grid container sm={12} md={12} xs={}> */}
         <Grid item xs={12} sm={12} md={12}>
           <Box
             sx={{
@@ -121,7 +89,6 @@ const Login = () => {
               marginLeft: "auto",
               marginRight: "auto",
               mt: "10px",
-              // mb: "40px",
             }}
           >
             <TextField
@@ -165,7 +132,6 @@ const Login = () => {
               open={openSnackbar}
               autoHideDuration={3000}
               onClose={handleClose}
-              // sx={{backgroundColor:'green'}}
             >
               <Alert
                 onClose={handleClose}
@@ -187,9 +153,7 @@ const Login = () => {
             </Typography>
           </Box>
         </Grid>
-        {/* </ThemeProvider> */}
       </Grid>
-      {/* </Grid> */}
     </Fragment>
   );
 };

@@ -58,7 +58,7 @@ const Register = ()=>{
     }),
     onSubmit: handleSave,
   });
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // const getInput = document.querySelectorAll("input");
   // const getButton = document.querySelector("button");
