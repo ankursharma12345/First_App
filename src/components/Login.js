@@ -33,7 +33,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    debugger
     if (getName === data.Username && getPassword === data.password) {
       setTimeout(()=>{
         dispatch(setSnackbar(true,"success","Loggin Successfully!!",true))

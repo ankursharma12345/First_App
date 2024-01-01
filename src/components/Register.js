@@ -45,6 +45,7 @@ const Register = ()=>{
 
   const dispatch = useDispatch();
   const handleSave = async() => {
+    debugger
     dispatch(setSnackbar(true,"success","Registered Successfully",true))
       // alert("Data submitted successfully!!");
       navigate("/", { replace: true }); // {replace:true, means when it navigate then in url current page url will be removed and navigation page url(means this-> /) will be shown}
