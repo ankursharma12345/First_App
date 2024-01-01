@@ -1,21 +1,28 @@
 import React, { Fragment } from "react";
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './Pages/Home'
-import Contact from './Pages/Contact'
-import About from './Pages/About'
-import Menu from './Pages/Menu'
-import Pagenotfound from './Pages/Pagenotfound'
+import { Route, Routes } from 'react-router-dom';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
+import Home from './Pages/Home';
+import Menu from './Pages/Menu';
+import Pagenotfound from './Pages/Pagenotfound';
+import Profile from "./Pages/Profile";
 import Rate from './Pages/Rate';
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Profile from "./Pages/Profile";
 
 function App() {
+  const getRoute = (path,component)=>{
+    return {
+      path: path,
+      element: component
+    }
+  }
   return (
     <Fragment>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
       <Routes>
-        <Route path="/" element={<Login/>}></Route>
+        <Route {...getRoute("/",<Login/>)}></Route>
+        {/* <Route path="/" element={<Login/>}></Route> */}
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
         <Route path="/about" element={<About/>}></Route>
@@ -25,7 +32,7 @@ function App() {
         <Route path="/profile" element={<Profile/>}></Route>
         <Route path="*" element={<Pagenotfound/>}></Route>
       </Routes>
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </Fragment>
   );
 }

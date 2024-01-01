@@ -9,6 +9,8 @@ import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import Snackbar from "@mui/material/Snackbar";
 import "../styles/Login.css";
+import { useDispatch } from "react-redux";
+import { setSnackbar } from "../Store/Reducers/Snackbar";
 
 const Login = () => {
   const [data, setData] = useState({});
@@ -32,13 +34,16 @@ const Login = () => {
 
   const handleClick = () => {
     if (getName === data.Username && getPassword === data.password) {
-      setOpenSnackbar(true);
+      dispatch(setSnackbar(true,"success","Loggin Successfully!!"))
+      // setOpenSnackbar(true);
       setTimeout(() => {
         navigate("/home"); // We can also use navigate with callback functions but we don't have to use Link with callback functions
       }, 400);
     }
   };
+  const dispatch = useDispatch();
   const handleRegister = () => {
+    // dispatch(setSnackbar(true,"success","Loggin Successfully!!"))
     setTimeout(() => {
       navigate("/register", { replace: true });
     }, 400);

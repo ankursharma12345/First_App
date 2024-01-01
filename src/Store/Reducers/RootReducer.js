@@ -1,5 +1,5 @@
 import SnackbarReducer from "./Snackbar";
-import {combineReducers} from "redux";
+import {combineReducers} from "redux"
 
 const rootReducer = combineReducers({
     snackbar: SnackbarReducer
