@@ -35,7 +35,7 @@ const Login = () => {
   const handleClick = () => {
     if (getName === data.Username && getPassword === data.password) {
       setTimeout(()=>{
-        dispatch(setSnackbar(true,"success","Loggin Successfully!!",true))
+        dispatch(setSnackbar(true,"success","Loggin Successfully!!"))
       },10);
       // setOpenSnackbar(true);
       setTimeout(() => {
@@ -51,12 +51,12 @@ const Login = () => {
     }, 400);
   };
 
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpenSnackbar(false);
-  };
+  // const handleClose = (event, reason) => {
+  //   if (reason === "clickaway") {
+  //     return;
+  //   }
+  //   setOpenSnackbar(false);
+  // };
   return (
     <Fragment>
       {/* <ThemeProvider theme={darkTheme}> */}
@@ -134,7 +134,7 @@ const Login = () => {
             >
               Sign in
             </Button>
-            <Snackbar
+            {/* <Snackbar
               className="snack"
               open={openSnackbar}
               autoHideDuration={3000}
@@ -147,7 +147,7 @@ const Login = () => {
               >
                 Logged In!!
               </Alert>
-            </Snackbar>
+            </Snackbar> */}
             <Button
               variant="contained"
               sx={{ mr: 5, mt: -7.1, ml: 24.5 }}

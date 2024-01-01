@@ -1,4 +1,4 @@
-export const SET_SNACKBAR = "Website";
+export const SET_SNACKBAR = "websiteSnackbar";
 
 const DEFAULT_TIME = 4000;
 const initialState = {

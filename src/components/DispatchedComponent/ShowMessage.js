@@ -1,19 +1,20 @@
 import { Snackbar } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import { Fragment, forwardRef } from "react";
-import {useSelector}  from "react-redux";
+import {useDispatch, useSelector}  from "react-redux";
+import { setSnackbar } from "../../Store/Reducers/Snackbar";
 
 const Alert = forwardRef((props, ref) => {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
 const ShowMessage = () => {
-  debugger
   const { snackbarOpen, snackbarType, snackbarMessage, snackbarTime } =
     useSelector((state) => state.snackbar);
 
-    const handleClose = (event,reason)=>{  
-        if(reason === "clickaway") return
+    const dispatch = useDispatch();
+    const handleClose = ()=>{  
+      dispatch(setSnackbar(false,snackbarType,snackbarMessage,snackbarTime))
     };
 
   return (

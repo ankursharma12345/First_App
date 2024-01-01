@@ -6,11 +6,13 @@ import App from "./App";
 import store from "./Store/ConfigureStore";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import ShowMessage from "./components/DispatchedComponent/ShowMessage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+      <ShowMessage/>
       <BrowserRouter>
         <App />
       </BrowserRouter>
