@@ -33,8 +33,11 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
+    debugger
     if (getName === data.Username && getPassword === data.password) {
-      dispatch(setSnackbar(true,"success","Loggin Successfully!!"))
+      setTimeout(()=>{
+        dispatch(setSnackbar(true,"success","Loggin Successfully!!",true))
+      },10);
       // setOpenSnackbar(true);
       setTimeout(() => {
         navigate("/home"); // We can also use navigate with callback functions but we don't have to use Link with callback functions
