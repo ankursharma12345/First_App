@@ -12,6 +12,8 @@ import Banner from "../images/jeremy-bishop-G9i_plbfDgk-unsplash.jpg";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { setSnackbar } from "../Store/Reducers/Snackbar";
 
 const Register = ()=>{
   const [data, setData] = useState({});
@@ -41,8 +43,10 @@ const Register = ()=>{
   // const getPassword = getDataItem.password;
   // console.log(getPassword);
 
+  const dispatch = useDispatch();
   const handleSave = async() => {
-      alert("Data submitted successfully!!");
+    dispatch(setSnackbar(true,"success","Registered Successfully",true))
+      // alert("Data submitted successfully!!");
       navigate("/", { replace: true }); // {replace:true, means when it navigate then in url current page url will be removed and navigation page url(means this-> /) will be shown}
     }
 
