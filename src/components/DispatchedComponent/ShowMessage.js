@@ -1,7 +1,7 @@
 import { Snackbar } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import { Fragment, forwardRef } from "react";
-import {useDispatch, useSelector}  from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setSnackbar } from "../../Store/Reducers/Snackbar";
 
 const Alert = forwardRef((props, ref) => {
@@ -12,10 +12,12 @@ const ShowMessage = () => {
   const { snackbarOpen, snackbarType, snackbarMessage, snackbarTime } =
     useSelector((state) => state.snackbar);
 
-    const dispatch = useDispatch();
-    const handleClose = ()=>{  
-      dispatch(setSnackbar(false,snackbarType,snackbarMessage,snackbarTime))
-    };
+  const dispatch = useDispatch();
+  const handleClose = () => {
+    /*Instead of False(first argument of setSnackbar), We have to give all the parameters, if we don,t give then after closing 
+    the snackbar it close with success. */
+    dispatch(setSnackbar(false, snackbarType, snackbarMessage, snackbarTime));
+  };
 
   return (
     <Fragment>
@@ -24,7 +26,7 @@ const ShowMessage = () => {
         open={snackbarOpen}
         autoHideDuration={snackbarTime}
         onClose={handleClose}
-        sx={{ whiteSpace: "pre-wrap" }}
+        sx={{ whiteSpace: "pre-wrap"}}
       >
         <Alert
           onClose={handleClose}
@@ -33,10 +35,6 @@ const ShowMessage = () => {
             snackbarType === "success"
               ? {
                   width: "100%",
-
-                  //   backgroundColor: "#ebccd1 !important",
-                  //  color: " #a94442 !important",
-
                   boxShadow: "none !important",
                   marginTop: "40px !important",
                 }
@@ -52,7 +50,6 @@ const ShowMessage = () => {
                 }
               : {
                   width: "100%",
-
                   backgroundColor: "#ebccd1 !important",
                   color: " #a94442 !important",
 
@@ -61,9 +58,7 @@ const ShowMessage = () => {
                 }
           }
         >
-          {
-            snackbarMessage
-           }
+          {snackbarMessage}
         </Alert>
       </Snackbar>
     </Fragment>

@@ -1,6 +1,6 @@
 export const SET_SNACKBAR = "websiteSnackbar";
 
-const DEFAULT_TIME = 4000;
+const DEFAULT_TIME = 2000;
 const initialState = {
   snackbarOpen: false,
   snackbarType: "success",

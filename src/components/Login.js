@@ -1,23 +1,22 @@
-import { Alert, Box, Button, Grid, Typography } from "@mui/material";
-import React, { Fragment, useState } from "react";
-import TextField from "@mui/material/TextField";
-import { Link, useNavigate } from "react-router-dom";
-import Image from "../images/thomas-heintz-0tgMnMIYQ9Y-unsplash.jpg";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
-import Snackbar from "@mui/material/Snackbar";
-import "../styles/Login.css";
+import TextField from "@mui/material/TextField";
+import React, { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { setSnackbar } from "../Store/Reducers/Snackbar";
+import Image from "../images/thomas-heintz-0tgMnMIYQ9Y-unsplash.jpg";
+import "../styles/Login.css";
 
 const Login = () => {
   const [data, setData] = useState({});
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-  const [openSnackbar, setOpenSnackbar] = useState(false);
   const handleChange = (e) => {
     setData((prevData) => {
       prevData[e.target.name] = e.target.value;
@@ -34,37 +33,34 @@ const Login = () => {
 
   const handleClick = () => {
     if (getName === data.Username && getPassword === data.password) {
-      setTimeout(()=>{
-        dispatch(setSnackbar(true,"success","Loggin Successfully!!"))
-      },10);
-      // setOpenSnackbar(true);
+      setTimeout(() => {
+        dispatch(
+          setSnackbar(
+            true,
+            "success",
+            `${"Login Successfully!!"}${" " + getName}`
+          )
+        );
+      }, 10);
       setTimeout(() => {
         navigate("/home"); // We can also use navigate with callback functions but we don't have to use Link with callback functions
       }, 400);
+      return;
     }
+    if (getName !== data.Username || getPassword !== data.password) {
+      dispatch(setSnackbar(true, "error", "Please check your credentials"));
+    }
+    return;
   };
-  const dispatch = useDispatch();
   const handleRegister = () => {
-    // dispatch(setSnackbar(true,"success","Loggin Successfully!!"))
     setTimeout(() => {
       navigate("/register", { replace: true });
     }, 400);
   };
-
-  // const handleClose = (event, reason) => {
-  //   if (reason === "clickaway") {
-  //     return;
-  //   }
-  //   setOpenSnackbar(false);
-  // };
   return (
     <Fragment>
-      {/* <ThemeProvider theme={darkTheme}> */}
       <Grid
         container
-        xs={12}
-        sm={12}
-        md={12}
         height="100vh"
         width="100vw"
         sx={{
@@ -73,14 +69,13 @@ const Login = () => {
       >
         {/* For fixing the scroll we use backgroundPositionY: 'fixed' */}
         {/* <CssBaseline /> */}
-        <Grid item xs={12} md={12} sm={12} bgcolor="red">
+        <Grid item xs={12} md={12} sm={12}>
           <Typography
             sx={{
               color: "green",
               fontSize: 30,
               fontWeight: "bold",
               textAlign: "center",
-              bgcolor: "yellow",
             }}
           >
             Login Here!!
@@ -134,20 +129,6 @@ const Login = () => {
             >
               Sign in
             </Button>
-            {/* <Snackbar
-              className="snack"
-              open={openSnackbar}
-              autoHideDuration={3000}
-              onClose={handleClose}
-            >
-              <Alert
-                onClose={handleClose}
-                severity="success"
-                sx={{ width: "100%", backgroundColor: "green", color: "white" }}
-              >
-                Logged In!!
-              </Alert>
-            </Snackbar> */}
             <Button
               variant="contained"
               sx={{ mr: 5, mt: -7.1, ml: 24.5 }}

@@ -44,11 +44,10 @@ const Register = ()=>{
   // console.log(getPassword);
 
   const dispatch = useDispatch();
-  const handleSave = async() => {
+  const handleSave = () => {
     debugger
-    dispatch(setSnackbar(true,"success","Registered Successfully",true))
-      // alert("Data submitted successfully!!");
-      navigate("/", { replace: true }); // {replace:true, means when it navigate then in url current page url will be removed and navigation page url(means this-> /) will be shown}
+    dispatch(setSnackbar(true,"success","Registered Successfully!!"))
+       navigate("/", { replace: true }); // {replace:true, means when it navigate then in url current page url will be removed and navigation page url(means this-> /) will be shown}
     }
 
   const { handleSubmit, errors } = useFormik({

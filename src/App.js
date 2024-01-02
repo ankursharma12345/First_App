@@ -19,20 +19,17 @@ function App() {
   }
   return (
     <Fragment>
-      {/* <BrowserRouter> */}
       <Routes>
         <Route {...getRoute("/",<Login/>)}></Route>
-        {/* <Route path="/" element={<Login/>}></Route> */}
-        <Route path="/register" element={<Register/>}></Route>
-        <Route path="/home" element={<Home/>}></Route>
-        <Route path="/about" element={<About/>}></Route>
-        <Route path="/contact" element={<Contact/>}></Route>
-        <Route path="/menu" element={<Menu/>}></Route>
-        <Route path="/rate" element={<Rate/>}></Route>
-        <Route path="/profile" element={<Profile/>}></Route>
-        <Route path="*" element={<Pagenotfound/>}></Route>
+        <Route {...getRoute("/register",<Register/>)}></Route>
+        <Route {...getRoute("/home",<Home/>)}></Route>
+        <Route {...getRoute("/about",<About/>)}></Route>
+        <Route {...getRoute("/contact",<Contact/>)}></Route>
+        <Route {...getRoute("/menu",<Menu/>)}></Route>
+        <Route {...getRoute("/rate",<Rate/>)}></Route>
+        <Route {...getRoute("/profile",<Profile/>)}></Route>
+        <Route {...getRoute("*",<Pagenotfound/>)}></Route>
       </Routes>
-      {/* </BrowserRouter> */}
     </Fragment>
   );
 }
