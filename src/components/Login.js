@@ -91,7 +91,6 @@ const Login = () => {
       );
     }
     if (getName !== data.Username || getPassword !== data.password) {
-      debugger;
       // dispatch(setLoader("start"));
       dispatch(setSnackbar(true, "error", "Please! check your credentials"));
       const getData = document.getElementById("Username");
