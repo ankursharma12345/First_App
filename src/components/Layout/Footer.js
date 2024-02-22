@@ -28,7 +28,7 @@ const Footer = () => {
             },
             "& svg:hover": {
               color: "goldenrod",
-              transform: "translateX(5px)", // This helps in animation with x-axis because we use translateX. when we hover on the icons then it will be moved at the x-axis only 5px
+              transform: "translateX(5px)", // This helps in animation with x-axis because we use translateX. when we hover on the icons then it will be moved to the x-axis only 5px
               transition: "all 400ms", // it tells that when we hover on the icon then it will move x-axis only 5px and with the help of transition, it will apply on all and returns back after 400ms
             },
           }}

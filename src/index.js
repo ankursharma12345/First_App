@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import store from "./Store/ConfigureStore";
+import ShowMessage from "./components/DispatchedComponent/ShowMessage";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import ShowMessage from "./components/DispatchedComponent/ShowMessage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ShowMessage/>
+      <ShowMessage />
       <BrowserRouter>
         <App />
       </BrowserRouter>

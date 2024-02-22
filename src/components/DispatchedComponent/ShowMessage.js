@@ -54,7 +54,7 @@ const ShowMessage = () => {
                   color: " #a94442 !important",
 
                   boxShadow: "none !important",
-                  marginTop: "40px !important",
+                  marginTop: "0px !important",
                 }
           }
         >

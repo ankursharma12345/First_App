@@ -12,10 +12,8 @@ const [value, setValue] = useState(0);
   // const btn = document.getElementsByTagName("Button")[1];
 
   const handleEnter = (e) => {
-    debugger
     // e.preventDefault();
       if(e.keyCode === 13){
-        debugger
         // btn.currentTarget.select();
         btn.current.focus();
       }

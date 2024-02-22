@@ -7,14 +7,11 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-// import Logo1 from "../../images/logo1.png";
-// import FastfoodIcon from "@mui/icons-material/Fastfood";
 import { Link } from "react-router-dom";
 import "../../styles/HeaderStyles.css";
-// import MenuIcon from '@mui/icons-material/Menu';
 import Divider from "@mui/material/Divider";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -111,7 +108,9 @@ const Header = () => {
                 </li>
 
                 <li>
-                  <Link to={"/profile"}><AccountCircleIcon/></Link>
+                  <Link to={"/profile"}>
+                    <AccountCircleIcon />
+                  </Link>
                 </li>
               </ul>
             </Box>

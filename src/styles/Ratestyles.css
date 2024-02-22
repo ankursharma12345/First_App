@@ -5,7 +5,7 @@
  font-weight: 400px;
 }
 .box .field{
-    width: 700px;
+    width: 700px !important;
 }
 .btn{
     margin-top: 50px;

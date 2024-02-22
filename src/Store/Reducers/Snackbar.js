@@ -25,7 +25,6 @@ export const setSnackbar = (
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = initialState, action) => {
-  debugger
   switch (action.type) {
     case SET_SNACKBAR:
       const { snackbarOpen, snackbarType, snackbarMessage, removeDefaultTime } =

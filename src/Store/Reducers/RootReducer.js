@@ -3,6 +3,6 @@ import {combineReducers} from "redux"
 
 /* combineReducer for combining all the reducers */
 const rootReducer = combineReducers({
-    snackbar: SnackbarReducer
+    snackbar: SnackbarReducer,
 })
 export default rootReducer;
