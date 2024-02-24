@@ -5,7 +5,7 @@ import { Grid } from "@mui/material";
 
 const Layout = ({ children }) => {
   return (
-    <Fragment>
+    <Fragment> 
       <Grid container>
         <Grid item xs={12} sm={12}>
           <Header />

@@ -55,15 +55,14 @@ const Register = () => {
 
   return (
     <Fragment>
-      <Grid container overflowY="hidden">
+      <Grid container>
         <Grid
           item
-          xs={10}
+          xs={12}
           sm={10}
           md={11}
           justifyContent="center"
           alignItems="center"
-          overflowY="hidden"
         >
           <Grid
             container
@@ -73,8 +72,8 @@ const Register = () => {
             alignItems="center"
             sx={{
               background: "linear-gradient(lightblue,black)",
-              padding: { xs: 0, sm: 0, md: "2.5rem 1.5rem " },
-              margin: { xs: 0, sm: 0, md: "3.5rem 3.5rem" },
+              padding: { xs: 0, sm: 0, md: "1.5rem 1.5rem " },
+              margin: { xs: 0, sm: 0, md: "1.5rem 3.5rem" },
             }}
           >
             <Grid
@@ -139,7 +138,7 @@ const Register = () => {
                   variant="filled"
                   name="password"
                   type="password"
-                  value={data.name}
+                  value={data?.name}
                   label="Password *"
                   onChange={handleChange}
                   error={Boolean(errors.password)}
@@ -150,7 +149,7 @@ const Register = () => {
                   variant="filled"
                   name="confirmpassword"
                   type="password"
-                  value={data.name}
+                  value={data?.name}
                   label="Confirm Password *"
                   onChange={handleChange}
                   error={Boolean(errors.confirmpassword)}
@@ -171,6 +170,9 @@ const Register = () => {
           </Grid>
         </Grid>
       </Grid>
+
+      {/* export default YourComponent; */}
+
       {/* <form>
         <Box sx={{ backgroundImage: `url(${Banner})`, height: "100vh" }}>
           <Typography

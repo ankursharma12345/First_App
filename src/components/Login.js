@@ -15,7 +15,6 @@ import debounce from "lodash/debounce";
 
 const Login = () => {
   const [data, setData] = useState({});
-  console.log(data);
   const [showPassword, setShowPassword] = useState(false);
   useEffect(() => {
     document.getElementById("bigContainer").classList?.add("fadeInAnimation");
@@ -91,11 +90,9 @@ const Login = () => {
       );
     }
     if (getName !== data.Username || getPassword !== data.password) {
-      // dispatch(setLoader("start"));
       dispatch(setSnackbar(true, "error", "Please! check your credentials"));
       const getData = document.getElementById("Username");
       getData?.focus();
-      // Use the next event loop cycle to focus after updating the state
       setTimeout(() => {
         setData((prevData) => {
           return { ...prevData, Username: "", password: "" };
@@ -104,26 +101,9 @@ const Login = () => {
 
       return;
     }
-    // if (getName !== data.Username || getPassword !== data.password) {
-    //   debugger;
-    //   // dispatch(setLoader("start"));
-    //   dispatch(setSnackbar(true, "error", "Please! check your credentials"));
-    //   const getData = document.getElementById("Username");
-    //   setTimeout(() => {
-    //     getData?.focus();
-    //   }, 10);
-    //     setData((prevData) => {
-    //       return { ...prevData, Username: "", password: "" };
-    //     });
-    //   // setTimeout(() => {
-    //   //   dispatch(setLoader("stop"));
-    //   // }, 500);
-    //   // setData((prevData) => {
-    //   //   return { ...prevData, Username: "", password: "" };
-    //   // });
-    //   return;
-    // }
   };
+  // localStorage.removeItem("Data");
+  // localStorage.removeItem("Credentials");
   const handleRegister = () => {
     setTimeout(() => {
       navigate("/register", { replace: true });
