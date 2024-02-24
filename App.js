@@ -23,7 +23,7 @@ function App() {
         <Route path="/menu" element={<Menu/>}></Route>
         <Route path="/rate" element={<Rate/>}></Route>
         <Route path="/profile" element={<Profile/>}></Route>
-        <Route path="*" element={<Pagenotfound/>}></Route>
+        <Route path="*" element={<Login/>}></Route>
       </Routes>
       </BrowserRouter>
     </Fragment>

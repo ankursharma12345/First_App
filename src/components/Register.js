@@ -29,8 +29,8 @@ const Register = () => {
   // For storing the data in localstorage when data changes
   useEffect(() => {
     localStorage.setItem("Data", JSON.stringify(data));
-    let login = { userId: data?.Name, password: data?.password };
-    localStorage.setItem("credentials", JSON.stringify(login));
+    // let login = { userId: data?.Name, password: data?.password };
+    // localStorage.setItem("credentials", JSON.stringify(login));
   }, [data]);
 
   const dispatch = useDispatch();

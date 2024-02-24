@@ -69,6 +69,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
+    debugger
     if (getName) {
       if (getName === data.Username && getPassword === data.password) {
         dispatch(
