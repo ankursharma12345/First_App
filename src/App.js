@@ -28,7 +28,7 @@ function App() {
         <Route {...getRoute("/menu", <Menu />)}></Route>
         <Route {...getRoute("/rate", <Rate />)}></Route>
         <Route {...getRoute("/profile", <Profile />)}></Route>
-        <Route {...getRoute("*", <Pagenotfound />)}></Route>
+        <Route {...getRoute("*", <Login />)}></Route>
       </Routes>
     </Fragment>
   );
