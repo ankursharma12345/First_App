@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Restaurant-Website/static/css/main.8ced968f.css",
+    "main.js": "/Restaurant-Website/static/js/main.6f193529.js",
+    "static/js/787.aab8bd84.chunk.js": "/Restaurant-Website/static/js/787.aab8bd84.chunk.js",
+    "static/media/kalyani-akella-vgTntT8PmIM-unsplash.jpg": "/Restaurant-Website/static/media/kalyani-akella-vgTntT8PmIM-unsplash.535c5b8dcea3e0a5aa8a.jpg",
+    "static/media/jaydeep-gajera-7yb08BMYhmQ-unsplash.jpg": "/Restaurant-Website/static/media/jaydeep-gajera-7yb08BMYhmQ-unsplash.082dd736e5848446bf2c.jpg",
+    "static/media/brooke-lark-4J059aGa5s4-unsplash.jpg": "/Restaurant-Website/static/media/brooke-lark-4J059aGa5s4-unsplash.3ca1990cb8f70ddba9de.jpg",
+    "static/media/deepal-tamang-5oF7d_hPJG4-unsplash.jpg": "/Restaurant-Website/static/media/deepal-tamang-5oF7d_hPJG4-unsplash.1447d80eae075c55fd3e.jpg",
+    "static/media/jonas-kakaroto-KIPqvvTOC1s-unsplash.jpg": "/Restaurant-Website/static/media/jonas-kakaroto-KIPqvvTOC1s-unsplash.63b7e37660dcfd3ab750.jpg",
+    "static/media/joanna-kosinska-llLttk4TgT4-unsplash.jpg": "/Restaurant-Website/static/media/joanna-kosinska-llLttk4TgT4-unsplash.c82d4edb9608e2717d24.jpg",
+    "static/media/foto-sushi-6anudmpILw4-unsplash.jpg": "/Restaurant-Website/static/media/foto-sushi-6anudmpILw4-unsplash.c61d88b24694ceb1da82.jpg",
+    "static/media/nordwood-themes-EZSm8xRjnX0-unsplash.jpg": "/Restaurant-Website/static/media/nordwood-themes-EZSm8xRjnX0-unsplash.5f19158bfccbb57138ef.jpg",
+    "static/media/chhola.jpg": "/Restaurant-Website/static/media/chhola.a1458ef1370699c23212.jpg",
+    "static/media/gujrati.jpeg": "/Restaurant-Website/static/media/gujrati.77bd2d3baa11e6cf3dcd.jpeg",
+    "static/media/dosa.jpg": "/Restaurant-Website/static/media/dosa.5c938f456ea86779ba13.jpg",
+    "index.html": "/Restaurant-Website/index.html",
+    "main.8ced968f.css.map": "/Restaurant-Website/static/css/main.8ced968f.css.map",
+    "main.6f193529.js.map": "/Restaurant-Website/static/js/main.6f193529.js.map",
+    "787.aab8bd84.chunk.js.map": "/Restaurant-Website/static/js/787.aab8bd84.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ced968f.css",
+    "static/js/main.6f193529.js"
+  ]
+}
