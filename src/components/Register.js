@@ -17,13 +17,23 @@ import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { setSnackbar } from "../Store/Reducers/Snackbar";
 import "../styles/Register.css";
+import { debounce } from "lodash";
+import BackImage from "../images/lucas-k-wQLAGv4_OYs-unsplash.jpg";
 
 const Register = () => {
   const [data, setData] = useState({});
+  console.log(data);
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     setData((prevData) => {
       prevData[e.target.name] = e.target.value;
       return { ...prevData };
+    });
+  };
+  const handleBlur = (e, value) => {
+    setData((prev) => {
+      prev[e.target.id] = e.target.value;
+      return { ...prev };
     });
   };
   // For storing the data in localstorage when data changes
@@ -33,7 +43,6 @@ const Register = () => {
     // localStorage.setItem("credentials", JSON.stringify(login));
   }, [data]);
 
-  const dispatch = useDispatch();
   const handleSave = () => {
     dispatch(setSnackbar(true, "success", "Registered Successfully!!"));
     navigate("/", { replace: true }); // {replace:true, means when it navigate then in url current page url will be removed and navigation page url(means this-> /) will be shown}
@@ -47,7 +56,6 @@ const Register = () => {
         .required()
         .max(6, "can not be more or less than 6")
         .min(6, "can not be less than 6"),
-      // EmailId: Yup.string().required().email(),
     }),
     onSubmit: handleSave,
   });
@@ -55,118 +63,103 @@ const Register = () => {
 
   return (
     <Fragment>
-      <Grid container>
+      <Grid container sx={{backgroundImage:`url(${BackImage})`}}>
         <Grid
           item
           xs={12}
-          sm={10}
-          md={11}
+          sm={12}
+          md={12}
+          // spacing={2}
           justifyContent="center"
           alignItems="center"
+          display="flex"
+          sx={{
+            background: "linear-gradient(lightblue,black)",
+            padding: { xs: "1.5rem", sm: "1.5rem", md: "1.5rem 1.5rem " },
+            margin: { xs: "1.5rem", sm: "1.5rem", md: "2.5rem 3.5rem" },
+          }}
         >
           <Grid
-            container
-            spacing={0}
-            // padding="2.5rem"
+            item
+            xs={0}
+            sm={0}
+            md={6}
             justifyContent="center"
             alignItems="center"
+            display={{ xs: "none", sm: "none", md: "flex" }}
             sx={{
-              background: "linear-gradient(lightblue,black)",
-              padding: { xs: 0, sm: 0, md: "1.5rem 1.5rem " },
-              margin: { xs: 0, sm: 0, md: "1.5rem 3.5rem" },
+              backgroundImage: `url(${Banner})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              height: "80vh",
+              width: "100%",
+              // flexWrap: "wrap",
+              // backgroundPosition: {
+              //   xs: "center",
+              //   sm: "center",
+              //   md: "center",
+              // },
             }}
+          ></Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={4}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
           >
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={7}
-              justifyContent="center"
-              alignItems="center"
-              display="flex"
+            <Stack
+              spacing={2}
+              direction="column"
               sx={{
-                backgroundImage: `url(${Banner})`,
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                height: "100vh",
-                width: "100%",
-                flexWrap: "wrap",
-                backgroundPosition: {
-                  xs: "center",
-                  sm: "center",
-                  md: "center",
-                },
+                xs: { marginTop: 3 },
+                sm: { marginTop: 3 },
+                md: { marginTop: 5 },
               }}
-            ></Grid>
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              justifyContent="center"
-              alignItems="center"
-              display="flex"
             >
-              <Stack
-                spacing={2}
-                direction="column"
-                sx={{
-                  xs: { marginTop: 3 },
-                  sm: { marginTop: 3 },
-                  md: { marginTop: 5 },
-                }}
+              <TextField
+                label="Name"
+                variant="filled"
+                autoFocus={true}
+                id="Name"
+                value={data?.["Name"]}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                autoComplete="off"
+              ></TextField>
+              <TextField
+                label="Password *"
+                variant="filled"
+                type="password"
+                id="password"
+                value={data?.["password"]}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={Boolean(errors.password)}
+                helperText={errors.password}
+              ></TextField>
+              <TextField
+                variant="filled"
+                id="confirmpassword"
+                type="password"
+                value={data?.["confirmpassword"]}
+                label="Confirm Password *"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={Boolean(errors.confirmpassword)}
+                helperText={errors.confirmpassword}
+              ></TextField>
+              <Button
+                variant="contained"
+                size="large"
+                sx={{ backgroundColor: "goldenrod" }}
+                onClick={handleSubmit}
               >
-                <TextField
-                  variant="filled"
-                  autoFocus={true}
-                  name="Name"
-                  value={data.name}
-                  label="Name"
-                  onChange={handleChange}
-                  autoComplete="off"
-                  // variant="filled"
-                  // name="EmailId"
-                  // value={data.name}
-                  // label="Name/Email Id"
-                  // onChange={handleChange}
-                  // autoComplete="off"
-                  // error={Boolean(errors.EmailId)}
-                  // helperText={errors.EmailId}
-                  // sx={{ ml: "15%", mt: 7 }}
-                ></TextField>
-                <TextField
-                  variant="filled"
-                  name="password"
-                  type="password"
-                  value={data?.name}
-                  label="Password *"
-                  onChange={handleChange}
-                  error={Boolean(errors.password)}
-                  helperText={errors.password}
-                  // sx={{ ml: "19%", mt: 5 }}
-                ></TextField>
-                <TextField
-                  variant="filled"
-                  name="confirmpassword"
-                  type="password"
-                  value={data?.name}
-                  label="Confirm Password *"
-                  onChange={handleChange}
-                  error={Boolean(errors.confirmpassword)}
-                  helperText={errors.confirmpassword}
-                  // sx={{ ml: "19%", mt: 5 }}
-                ></TextField>
-                <Button
-                  variant="contained"
-                  size="large"
-                  sx={{ backgroundColor: "goldenrod" }}
-                  // sx={{ mt: 7, ml: "43%", fontSize: 19 }}
-                  onClick={handleSubmit}
-                >
-                  SUBMIT
-                </Button>
-              </Stack>
-            </Grid>
+                SUBMIT
+              </Button>
+            </Stack>
           </Grid>
         </Grid>
       </Grid>
