@@ -4,7 +4,6 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import Menu from "./Pages/Menu";
-import Pagenotfound from "./Pages/Pagenotfound";
 import Profile from "./Pages/Profile";
 import Rate from "./Pages/Rate";
 import Login from "./components/Login";
