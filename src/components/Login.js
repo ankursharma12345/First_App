@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@emotion/react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -8,10 +9,8 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setSnackbar } from "../Store/Reducers/Snackbar";
-import "../styles/Login.css";
 import Banner from "../images/joanna-kosinska-llLttk4TgT4-unsplash.jpg";
-import { ThemeProvider } from "@emotion/react";
-import debounce from "lodash/debounce";
+import "../styles/Login.css";
 
 const Login = () => {
   const [data, setData] = useState({});
