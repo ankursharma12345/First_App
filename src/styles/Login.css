@@ -5,88 +5,15 @@
   transition: black 0.3s ease-in-out;
   border-top-left-radius: 130px;
 }
-/* @keyframes movingBorder {
-  0% { */
-    /* border-color: rgb(239, 183, 16); */
-    /* border-width: 2.5px; */
-    /* border: linear-gradient(black, rgb(11, 241, 118)); */
-    /* border-left: #0898f2;
-    transition-timing-function: 0.3s ease-in-out;
-  }
-  25% { */
-    /* border-color: rgb(41, 41, 112); */
-    /* border-width: 2.5px;
-    border-top: #09dcf0; */
-    /* border: linear-gradient(blue, rgb(20, 239, 16)); */
-    /* transition-timing-function: 0.3s ease-in-out;
-  }
-  50% { */
-    /* border-color: rgb(95, 184, 184); */
-    /* border-width: 2.5px; */
-    /* border: linear-gradient(rgb(250, 26, 176), rgb(233, 20, 20)); */
-    /* border-right-color:crimson; */
-    /* border-right-color:rgb(9, 234, 222); */
-    /* border: 3px solid transparent; */
-    /* transition-timing-function: 0.3s ease-in-out;
-  }
-  75% {
-    border-width: 2.5px;
-    border-color: rgb(23, 168, 235);
-    transition-timing-function: 0.3s ease-in-out;
-  }
-  100% {
-    border-width: 2.5px;
-    border-bottom-color: rgb(12, 225, 244); */
-    /* border: 3px solid transparent; */
-    /* transition-timing-function: 0.3s ease-in-out;
-  }
-} */
 .TextField {
   color: white;
 }
 .textField2 {
   color: rgb(15, 97, 180);
 }
-.contained {
-  margin-right: 0px;
-}
-
-/* @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fadeInAnimation {
-  animation: fadeIn 0.5s ease-out;
-} */
-
 body {
   margin: 0;
-  /* overflow: hidden; */
 }
-
-/* @keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 50%;
-  } */
-  /* 100% {
-    background-position: 0% 50%;
-  } */
-/* } */
-
-/* .container {
-  background-size: 400% 400%;
-  animation: gradientAnimation 20s ease infinite;
-} */
 
 @keyframes combinedAnimation {
   0% {
@@ -110,5 +37,19 @@ body {
   background-size: 400% 400%;
   animation: combinedAnimation 20s ease alternate;
 }
-
-
+#btn1 {
+  transition: transform 0.4s ease;
+}
+#btn1:hover {
+  transform: scale(1.1);
+  background-color: aqua;
+  color: black;
+}
+#btn2 {
+  transition: transform 0.4s ease;
+}
+#btn2:hover {
+  transform: scale(1.1);
+  background-color: aqua;
+  color: black;
+}

@@ -36,31 +36,6 @@ const Login = () => {
       return { ...prev };
     });
   };
-  // const handleBlur = (e) => {
-  //   debugger;
-  //   const { id, value } = e.target;
-
-  //   setData((prev) => {
-  //     // Update the state only if the value is not an empty string
-  //     if (value.trim() !== "") {
-  //       prev[id] = value;
-  //     }
-  //     return { ...prev };
-  //   });
-  // };
-  // const handleBlur = (e) => {
-  //   debugger;
-  //   const { id, value } = e.target;
-
-  //   setData((prev) => {
-  //     // Update the state only if the value is not an empty string
-  //     if (value.trim() !== "") {
-  //       prev[id] = value;
-  //     }
-  //     prev[id] = value;
-  //     return { ...prev };
-  //   });
-  // };
 
   const getData = JSON.parse(localStorage.getItem("Data"));
   const getName = getData?.Name;
@@ -69,7 +44,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    debugger
     if (getName) {
       if (getName === data.Username && getPassword === data.password) {
         dispatch(
@@ -103,8 +77,6 @@ const Login = () => {
       return;
     }
   };
-  // localStorage.removeItem("Data");
-  // localStorage.removeItem("Credentials");
   const handleRegister = () => {
     setTimeout(() => {
       navigate("/register", { replace: true });
@@ -115,8 +87,9 @@ const Login = () => {
       MuiInputLabel: {
         styleOverrides: {
           root: {
-            fontSize: "1.3rem",
+            fontSize: "1.4rem",
             color: "yellow",
+            fontFamily: "cursive",
           },
         },
       },
@@ -137,7 +110,6 @@ const Login = () => {
           backgroundRepeat: "no-repeat",
           overflowX: "hidden",
           overflowY: "hidden",
-          // flexWrap: "wrap",
         }}
       >
         <Grid
@@ -145,7 +117,6 @@ const Login = () => {
           xs={12}
           sm={12}
           md={12}
-          // direction="column"
           sx={{
             display: "flex",
             alignItems: "center",
@@ -157,11 +128,9 @@ const Login = () => {
             sx={{
               width: { xs: 280, sm: 300, md: 400 },
               height: { xs: 340, sm: 380, md: 450 },
-              // backgroundColor: "#598dc2",
               backgroundColor: "transparent",
               boxShadow: "rgba(0.3,0.3,0.3,0.3)",
               margin: "auto", // For centering the Box horizontally
-              // mt: { xs: -12, sm: -12, md: -3 },
             }}
           >
             <Grid
@@ -173,7 +142,6 @@ const Login = () => {
               justifyContent="center"
               display="flex"
               marginTop="1rem"
-              // marginTop="auto"
             >
               <Typography variant="h4">Sign In</Typography>
             </Grid>
@@ -184,12 +152,9 @@ const Login = () => {
                   className="textField1"
                   autoFocus={true} // autoFocus should be written like this else it throw error. we don't pass like autoFocus="true"
                   required={true} // required should be written like this else it throw error.we don't pass like required="true"
-                  // color="secondary"
                   label="Username"
                   variant="standard"
                   id="Username"
-                  // color="success"
-                  // value={data?.Username}
                   value={data?.["Username"]}
                   autoComplete="off" // It will not show any hint
                   onChange={handleChange}
@@ -241,6 +206,7 @@ const Login = () => {
             <Grid item xs={12} sm={12} md={12}>
               {" "}
               <Button
+                id="btn1"
                 variant="contained"
                 sx={{
                   mt: { xs: 5, sm: 4, md: 6 },
@@ -251,6 +217,7 @@ const Login = () => {
                 Sign in
               </Button>
               <Button
+                id="btn2"
                 variant="contained"
                 sx={{
                   mt: { xs: 5, sm: 4, md: -7 },
@@ -273,15 +240,10 @@ const Login = () => {
               {" "}
               <Typography
                 sx={{
-                  // justifyContent: "center",
-                  // alignItems: "center",
-                  // display: "flex",
-                  // ml: { xs: 2, sm: 2, md: 6.4 },
                   mt: { xs: 2, sm: 2, md: 1 },
                   color: "black",
                   fontWeight: "bold",
                   fontStyle: "italic",
-                  // fontSize: "19px",
                 }}
               >
                 New User?{" "}
@@ -294,7 +256,6 @@ const Login = () => {
           </Box>
         </Grid>
       </Grid>
-      {/* </video> */}
     </Fragment>
   );
 };
