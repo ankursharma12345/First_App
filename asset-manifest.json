@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/First_App/static/css/main.68f73df1.css",
-    "main.js": "/First_App/static/js/main.a21afb0a.js",
+    "main.js": "/First_App/static/js/main.d21c830b.js",
     "static/js/787.aab8bd84.chunk.js": "/First_App/static/js/787.aab8bd84.chunk.js",
     "static/media/kalyani-akella-vgTntT8PmIM-unsplash.jpg": "/First_App/static/media/kalyani-akella-vgTntT8PmIM-unsplash.535c5b8dcea3e0a5aa8a.jpg",
     "static/media/jaydeep-gajera-7yb08BMYhmQ-unsplash.jpg": "/First_App/static/media/jaydeep-gajera-7yb08BMYhmQ-unsplash.082dd736e5848446bf2c.jpg",
@@ -17,11 +17,11 @@
     "static/media/dosa.jpg": "/First_App/static/media/dosa.5c938f456ea86779ba13.jpg",
     "index.html": "/First_App/index.html",
     "main.68f73df1.css.map": "/First_App/static/css/main.68f73df1.css.map",
-    "main.a21afb0a.js.map": "/First_App/static/js/main.a21afb0a.js.map",
+    "main.d21c830b.js.map": "/First_App/static/js/main.d21c830b.js.map",
     "787.aab8bd84.chunk.js.map": "/First_App/static/js/787.aab8bd84.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.68f73df1.css",
-    "static/js/main.a21afb0a.js"
+    "static/js/main.d21c830b.js"
   ]
 }
