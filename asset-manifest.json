@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/First_App/static/css/main.68f73df1.css",
-    "main.js": "/First_App/static/js/main.d21c830b.js",
+    "main.css": "/First_App/static/css/main.3bf9091b.css",
+    "main.js": "/First_App/static/js/main.cb0eb66b.js",
     "static/js/787.aab8bd84.chunk.js": "/First_App/static/js/787.aab8bd84.chunk.js",
     "static/media/kalyani-akella-vgTntT8PmIM-unsplash.jpg": "/First_App/static/media/kalyani-akella-vgTntT8PmIM-unsplash.535c5b8dcea3e0a5aa8a.jpg",
     "static/media/jaydeep-gajera-7yb08BMYhmQ-unsplash.jpg": "/First_App/static/media/jaydeep-gajera-7yb08BMYhmQ-unsplash.082dd736e5848446bf2c.jpg",
@@ -16,12 +16,12 @@
     "static/media/gujrati.jpeg": "/First_App/static/media/gujrati.77bd2d3baa11e6cf3dcd.jpeg",
     "static/media/dosa.jpg": "/First_App/static/media/dosa.5c938f456ea86779ba13.jpg",
     "index.html": "/First_App/index.html",
-    "main.68f73df1.css.map": "/First_App/static/css/main.68f73df1.css.map",
-    "main.d21c830b.js.map": "/First_App/static/js/main.d21c830b.js.map",
+    "main.3bf9091b.css.map": "/First_App/static/css/main.3bf9091b.css.map",
+    "main.cb0eb66b.js.map": "/First_App/static/js/main.cb0eb66b.js.map",
     "787.aab8bd84.chunk.js.map": "/First_App/static/js/787.aab8bd84.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68f73df1.css",
-    "static/js/main.d21c830b.js"
+    "static/css/main.3bf9091b.css",
+    "static/js/main.cb0eb66b.js"
   ]
 }
