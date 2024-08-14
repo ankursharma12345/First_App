@@ -6,8 +6,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { setSnackbar } from "../Store/Reducers/Snackbar";
-import BackImage from "../images/lucas-k-wQLAGv4_OYs-unsplash.jpg";
 import Banner from "../images/austin-distel-VvAcrVa56fc-unsplash.jpg";
+import BackImage from "../images/lucas-k-wQLAGv4_OYs-unsplash.jpg";
 import "../styles/Register.css";
 
 const Register = () => {
@@ -17,6 +17,7 @@ const Register = () => {
     password: "",
     confirmpassword: "",
   });
+
   const dispatch = useDispatch();
   const handleChange = (e) => {
     setData((prevData) => {

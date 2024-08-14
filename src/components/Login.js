@@ -123,9 +123,9 @@ const Login = () => {
           }}
         >
           <Box
-            className="box"
+            className="loginBox"
             sx={{
-              width: { xs: 280, sm: 300, md: 400 },
+              width: { xs: 288, sm: 300, md: 400 },
               height: { xs: 340, sm: 380, md: 450 },
               backgroundColor: "transparent",
               boxShadow: "rgba(0.3,0.3,0.3,0.3)",
@@ -179,6 +179,7 @@ const Login = () => {
                 <TextField
                   className="textField2"
                   label="Password"
+                  autoComplete="off"
                   required={true}
                   variant="standard"
                   id="password"
@@ -236,7 +237,6 @@ const Login = () => {
               alignItems="center"
               display="flex"
             >
-              {" "}
               <Typography
                 sx={{
                   mt: { xs: 2, sm: 2, md: 1 },
@@ -245,10 +245,10 @@ const Login = () => {
                   fontStyle: "italic",
                 }}
               >
-                New User?{" "}
+                New User?
                 <b>
                   <Link to={"/register"}> Register </Link>
-                </b>{" "}
+                </b>
                 yourself first !!
               </Typography>
             </Grid>

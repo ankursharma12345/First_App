@@ -1,10 +1,17 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 import { Box, Typography } from "@mui/material";
 import Banner from "../images/foto-sushi-6anudmpILw4-unsplash.jpg";
 import "../../src/styles/Aboutstyles.css";
 
 const About = () => {
+  useEffect(() => {
+    // document.getElementsByTagName("header")[0].style.backgroundColor = "green !important";
+    const header = document.getElementsByTagName("header")[0];
+    if (header) {
+      header.style.backgroundColor = "green !important";
+    }
+  }, []);
   return (
     <Fragment>
       <Box className="box" sx={{ backgroundImage: `url(${Banner})` }}>

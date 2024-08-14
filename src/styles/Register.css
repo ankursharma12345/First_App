@@ -1,6 +1,6 @@
-body {
+/* body {
   overflow-y: hidden;
-}
+} */
 #btn {
   background-color: goldenrod;
   transition: transform 0.4s ease;

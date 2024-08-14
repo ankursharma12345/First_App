@@ -1,25 +1,81 @@
-.navigation-menu {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* .navBar {
+  background-color: black;
+}
+.rightitem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rightitem ul{
+  display: flex;
+}
+.rightitem li a{
+  margin: 0px 20px;
+  color: white;
+  text-decoration: none;
+}
+.list{
+  list-style: none;
+  font-size: 16px;
+}
+.MuiSvgIcon-root{
+  margin-top: -2px;
+} */
+/* .MuiTypography-root{ */
+/* margin-top: -20px; */
+/* margin-top: -1rem;
+} */
+
+/* @media screen and (min-width:900px){
+  .open .close{
+    display: none;
   }
-  .navigation-menu li {
-    margin: 0px 20px;
-  }
-  .navigation-menu li a {
-    text-decoration: none;
-    color: white;
-  }
-  /* mobile view */
-.mobile-navigation {
-    list-style: none;
-  }
-  .mobile-navigation li {
-    margin-top: 20px;
-  }
-  .mobile-navigation li a {
-    text-decoration: none;
-    font-size: 1.4rem;
-    color: black;
-  }
+} */
+
+.item {
+  margin-top: 0.2rem !important;
+  display: flex;
+  color: goldenrod;
+}
+#spanstyle {
+  font-weight: normal;
+  font-size: 12.5px;
+  color: skyblue;
+}
+.appbar {
+  background-color: black !important;
+}
+#home,
+#about,
+#contact,
+#experience {
+  color: white;
+}
+#home:hover,
+#about:hover,
+#experience:hover,
+#contact:hover {
+  border-bottom: 4px solid goldenrod;
+}
+.close-icon {
+  align-self: flex-start;
+}
+
+.list {
+  list-style: none;
+  font-size: 16px;
+}
+.rightitem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.7rem !important;
+}
+.rightitem ul {
+  display: flex;
+}
+.rightitem li a {
+  margin: 0px 20px;
+  color: white;
+  text-decoration: none;
+}

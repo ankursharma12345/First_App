@@ -2,34 +2,19 @@ import React, { useRef, useState } from "react";
 import { Box, Button, FormControl, FormLabel, TextField } from "@mui/material";
 import "../styles/Ratestyles.css";
 import Layout from "../components/Layout/Layout";
-import Rating from '@mui/material/Rating';
-import {useNavigate } from "react-router-dom";
+import Rating from "@mui/material/Rating";
+import { useNavigate } from "react-router-dom";
 
 const Rate = () => {
-const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0);
 
-  const btn = useRef();  // We are using useRef for focusing on the button
-  // const btn = document.getElementsByTagName("Button")[1];
-
-  const handleEnter = (e) => {
-    // e.preventDefault();
-      if(e.keyCode === 13){
-        // btn.currentTarget.select();
-        btn.current.focus();
-      }
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    alert("Thanks for the Review!!");
+    setTimeout(() => {
+      navigate("/home");
+    }, 300);
   };
-
-  // const textBlur = ()=>{
-  //   btn?.focus();
-  // }
-const navigate = useNavigate();
-  const handleClick = (e)=>{
-    alert("Thanks for the Review!!")
-    setTimeout(()=>{
-      navigate("/home")
-    },300)
-    
-  }
   return (
     <Layout>
       <FormControl
@@ -45,19 +30,21 @@ const navigate = useNavigate();
             borderWidth: 50,
             mr: 100,
           },
-          "& .rating":{
-           m:1,
-           mt:1,
-           mr:2
-          }
+          "& .rating": {
+            m: 1,
+            mt: 1,
+            mr: 2,
+          },
         }}
       >
         <FormLabel className="form">Enter your review:</FormLabel>
-        <Rating  className = "rating" value={value}
-            onChange={(event, newValue)=>{
-              setValue(newValue)
-            }}
-            />
+        <Rating
+          className="rating"
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+        />
         <Box className="box">
           <TextField
             autoFocus={true}
@@ -66,22 +53,19 @@ const navigate = useNavigate();
             // multiline
             rows={6}
             // maxRows={20}
-            onKeyDown={handleEnter}
             // onBlur = {textBlur}
           />
-            {/* <Rating  className = "rating" value={value}
+          {/* <Rating  className = "rating" value={value}
             onChange={(event, newValue)=>{
               setValue(newValue)
             }}
             /> */}
-          <Button variant="contained" className="btn" onClick={handleClick} ref={btn}>
+          <Button variant="contained" className="btn" onClick={handleClick}>
             Send
           </Button>
         </Box>
 
-        <p>
-          
-        </p>
+        <p></p>
       </FormControl>
     </Layout>
   );
